@@ -1,6 +1,12 @@
 # ShellGenius
 一个基于 Shell 脚本开发的Shell脚本管理器
 
+> 本项目大部分内容使用 chatGPT 制作
+
+![形象](./img.jpeg)
+
+> 形象制作使用 https://www.bing.com/images/create [完整链接](https://www.bing.com/images/create/winged-elf-is-arranging-a-wooden-stick-showing-the/644548a5b00c4612af7b3312c53fc866?id=0dHhvqKrT0ZW6oeCkTiCxw%3d%3d&view=detailv2&idpp=genimg&FORM=GCRIDP&ajaxhist=0&ajaxserp=0)
+
 ## 介绍
 ShellGenius 是一个基于 Shell 脚本开发的管理器，它可以按照既定的极简规则自动扫描所有可用的 Shell 脚本，并生成自动提示。这使得编写和使用 Shell 脚本变得十分高效和方便。
 
