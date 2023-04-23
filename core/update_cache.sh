@@ -73,6 +73,8 @@ if [[ -d "$WORK_PATH" ]]; then
     generate_completion_set $(basename "$dir") >> $SHELL_GENIUS_PATH/cache/completion
     generate_aliases_set $(basename "$dir") >> $SHELL_GENIUS_PATH/cache/aliases
   done
+  echo >> $SHELL_GENIUS_PATH/cache/completion
+  echo >> $SHELL_GENIUS_PATH/cache/aliases
   echo "Open a new terminal window and enjoy!"
 else
   # 如果 WORK_PATH 不存在或不是一个文件夹，输出错误信息
