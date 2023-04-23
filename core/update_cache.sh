@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 # leehom Chen clh021@gmail.com
 # 编写一个shell脚本
-# 准备好一个WORK_PATH的变量，默认值为$HOME目录下的ShellGnuisWorkSpace，
-# 然后$HOME/.ShellGnuisWorkPath文件是否存在，
+# 准备好一个WORK_PATH的变量，默认值为$HOME目录下的ShellGenuisWorkSpace，
+# 然后$HOME/.ShellGenuisWorkPath文件是否存在，
 #   如果存在则读取其中的内容，将内容视为一个全路径，检查这个全路径是否存在且是一个文件夹，
 #     如果是则更新变量的值，存储这个全路径。
 
 if [[ -z "${SHELL_GENIUS_PATH}" ]]; then
-  SHELL_GNUIS_PATH="$(cd "$(dirname "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)")" && pwd)"
+  SHELL_GENUIS_PATH="$(cd "$(dirname "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)")" && pwd)"
 fi
-WORK_PATH=${WORK_PATH:-$HOME/ShellGnuisWorkSpace}
+WORK_PATH=${WORK_PATH:-$HOME/ShellGenuisWorkSpace}
 
-if [[ -e "$HOME/.ShellGnuisWorkPath" ]]; then
-  NEW_PATH=$(cat "$HOME/.ShellGnuisWorkPath")
+if [[ -e "$HOME/.ShellGenuisWorkPath" ]]; then
+  NEW_PATH=$(cat "$HOME/.ShellGenuisWorkPath")
   if [[ -d "$NEW_PATH" ]]; then
     WORK_PATH="$NEW_PATH"
   fi
@@ -77,5 +77,5 @@ if [[ -d "$WORK_PATH" ]]; then
 else
   # 如果 WORK_PATH 不存在或不是一个文件夹，输出错误信息
   echo "Error : $WORK_PATH does not exist or is not a directory."
-  echo "Notice: You can write fullPath into ~/.ShellGnuisWorkPath to set WORKSPACE."
+  echo "Notice: You can write fullPath into ~/.ShellGenuisWorkPath to set WORKSPACE."
 fi
