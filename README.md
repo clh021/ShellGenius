@@ -14,8 +14,13 @@ ShellGenius 可以帮助用户快速定位和执行所需的命令，同时还�
 
 如果你是一位 Shell 脚本的高级用户或经常需要使用 Shell 脚本开展工作，或者想要组织自己的众多 Shell 脚本，那么 ShellGenius 就是你的不二选择。
 
-## 使用
+## 安装
 ```bash
 git clone --depth=1 git@github.com:clh021/ShellGenius.git
 ./ShellGenius/howToInstall.sh #按照提示粘贴代码，使.bashrc/.zshrc能加载应用
 ```
+
+## 使用
+### 创建主命令
+### 创建子命令
+### 更新
