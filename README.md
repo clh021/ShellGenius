@@ -16,5 +16,6 @@ ShellGenius 可以帮助用户快速定位和执行所需的命令，同时还�
 
 ## 使用
 ```bash
-git clone --depth=1 git@github.com:clh021/ShellGenius.git ~/.ShellGenius
+git clone --depth=1 git@github.com:clh021/ShellGenius.git
+./ShellGenius/howToInstall.sh #按照提示粘贴代码，使.bashrc/.zshrc能加载应用
 ```
