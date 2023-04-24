@@ -21,10 +21,25 @@ if [[ "$1" != /* ]]; then
 fi
 
 # echo $path;
+joinpath() {
+    # 获取第一个参数作为路径
+    local path="$1"
+    # 获取第二个参数作为子路径
+    local subpath="$2"
+
+    # 如果第一个参数没有斜杠结尾，则添加一个斜杠
+    [[ "$path" != */ ]] && path="${path}/"
+    # 如果第二个参数有斜杠开头，则去掉斜杠
+    [[ "$subpath" == /* ]] && subpath="${subpath:1}"
+    # 组合路径并输出
+    echo "${path}${subpath}"
+}
+
+CURRENT_SHELL_GENIUS_CMD_ROOT=$(joinpath "$path" "$1")
 
 # 迭代剩余的参数，构造最终路径，并依次查找路径
 while [ $# -gt 0 ]; do
-  path="$path/$1"
+  path=$(joinpath "$path" "$1")
   filebasename=$(basename "$path")
   if [ "$filebasename" = "--get-yargs-completions" ]; then
     $SHELL_GENIUS_COMPLETION $path $@
@@ -43,7 +58,7 @@ while [ $# -gt 0 ]; do
     if echo "$file_type" | grep -q "shell script"; then
       shift
       # 执行文件
-      "$path" "$@"
+      CURRENT_SHELL_GENIUS_CMD_ROOT=$CURRENT_SHELL_GENIUS_CMD_ROOT "$path" "$@"
     else
       echo "Just support shell script."
     fi
